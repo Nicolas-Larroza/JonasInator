@@ -12,7 +12,7 @@ def get_links_and_content(page_title):
         "titles": page_title
     }
     #ask the wikipedia API for what we want
-    response = requests.get(url, params=params, headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'}) 
+    response = requests.get(url, params=params, headers = {'User-Agent': 'JonasCrawler/0.1 (+https://github.com/NicolasLarroza; contact: nicolaslarroza1@gmail.com)'}) 
     #store what the API gave us in a variable
     data = response.json()
     print("STATUS CODE:", response.status_code)
@@ -72,4 +72,3 @@ while to_visit and len(visited) < 100: #setting a limit, for safety
     v_list['visited'] = visited
     with open('visit_list.json', 'w') as vl:
         json.dump(v_list, vl, indent=4)
-
